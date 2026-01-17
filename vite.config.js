@@ -6,5 +6,16 @@ export default defineConfig({
     server: {
         port: 5173,
         open: true
+    },
+    build: {
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    vendor: ['react', 'react-dom', 'react-router-dom', 'framer-motion'],
+                    ui: ['lucide-react', 'react-datepicker']
+                }
+            }
+        },
+        chunkSizeWarningLimit: 1000
     }
 })
