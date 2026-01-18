@@ -63,8 +63,8 @@ const RoomCard = ({ room }) => {
                         <Star
                             key={i}
                             className={`w-4 h-4 ${i < Math.floor(room.rating)
-                                    ? 'text-accent-500 fill-current'
-                                    : 'text-gray-300'
+                                ? 'text-accent-500 fill-current'
+                                : 'text-gray-300'
                                 }`}
                         />
                     ))}
@@ -85,7 +85,7 @@ const RoomCard = ({ room }) => {
 
                 {/* Features */}
                 <div className="flex flex-wrap items-center gap-3 text-sm text-neutral-500 mb-4 pb-4 border-b border-gray-100">
-                    <span className="flex items-center gap-1">
+                    <span className="flex items-center gap-1 whitespace-nowrap">
                         <Users className="w-4 h-4" />
                         {room.maxGuests} Guests
                     </span>

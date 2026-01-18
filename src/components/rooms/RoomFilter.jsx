@@ -244,14 +244,14 @@ const RoomFilter = ({ filters, onFilterChange, onReset, isOpen, onToggle }) => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={onToggle}
-                            className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+                            className="fixed inset-0 bg-black/50 z-[200] lg:hidden"
                         />
                         <motion.div
                             initial={{ x: '100%' }}
                             animate={{ x: 0 }}
                             exit={{ x: '100%' }}
                             transition={{ type: 'tween' }}
-                            className="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl z-50 lg:hidden overflow-y-auto"
+                            className="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl z-[201] lg:hidden overflow-y-auto"
                         >
                             <div className="p-6">
                                 <div className="flex items-center justify-between mb-6">

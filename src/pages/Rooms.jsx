@@ -171,7 +171,7 @@ const Rooms = () => {
                         <div className="flex-grow">
                             {/* Toolbar */}
                             <div className="bg-white rounded-xl shadow-sm p-4 mb-6">
-                                <div className="flex flex-wrap items-center justify-between gap-4">
+                                <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
                                     {/* Mobile Filter Button */}
                                     <button
                                         onClick={() => setIsFilterOpen(true)}
@@ -194,10 +194,10 @@ const Rooms = () => {
                                                 onChange={(e) => setSortBy(e.target.value)}
                                                 className="appearance-none bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-primary-500"
                                             >
-                                                <option value="recommended">Recommended</option>
-                                                <option value="price-low">Price: Low to High</option>
-                                                <option value="price-high">Price: High to Low</option>
-                                                <option value="rating">Highest Rated</option>
+                                                <option value="recommended" className="text-sm">Recommended</option>
+                                                <option value="price-low" className="text-sm">Price: Low to High</option>
+                                                <option value="price-high" className="text-sm">Price: High to Low</option>
+                                                <option value="rating" className="text-sm">Highest Rated</option>
                                             </select>
                                             <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400 pointer-events-none" />
                                         </div>

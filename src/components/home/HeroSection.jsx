@@ -85,7 +85,7 @@ const HeroSection = () => {
     };
 
     return (
-        <section className="relative h-screen w-full overflow-hidden">
+        <section className="relative min-h-screen w-full overflow-hidden">
             {/* Background Images */}
             <AnimatePresence>
                 <motion.div
@@ -108,7 +108,7 @@ const HeroSection = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
 
             {/* Content */}
-            <div className="relative z-10 h-full flex flex-col items-center justify-center text-white px-4 pb-32 md:pb-40">
+            <div className="relative z-10 h-full flex flex-col items-center justify-center text-white px-4 py-20 md:pb-64">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -146,6 +146,8 @@ const HeroSection = () => {
                             Discover More
                         </button>
                     </div>
+
+
                 </motion.div>
 
                 {/* Booking Widget */}
@@ -154,7 +156,7 @@ const HeroSection = () => {
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.8 }}
-                        className="absolute bottom-20 left-4 right-4 md:left-auto md:right-auto max-w-4xl w-full mx-auto"
+                        className="w-full mt-12 md:mt-0 md:absolute md:bottom-20 md:left-auto md:right-auto max-w-4xl mx-auto"
                     >
                         <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-4 md:p-6 overflow-visible">
                             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">

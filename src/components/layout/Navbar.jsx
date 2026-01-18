@@ -43,79 +43,81 @@ const Navbar = () => {
     const toggleMenu = () => setIsOpen(!isOpen);
 
     return (
-        <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${useDarkStyle
-                ? 'bg-white/95 backdrop-blur-md shadow-lg py-3'
-                : 'bg-transparent py-5'
-                }`}
-        >
-            <div className="container-custom">
-                <div className="flex items-center justify-between">
-                    {/* Logo */}
-                    <Link to="/" className="flex items-center gap-2 group">
-                        <Waves
-                            className={`w-8 h-8 transition-colors duration-300 ${useDarkStyle ? 'text-primary-500' : 'text-white'
-                                }`}
-                        />
-                        <span
-                            className={`font-heading text-xl md:text-2xl font-bold transition-colors duration-300 ${useDarkStyle ? 'text-primary-600' : 'text-white'
-                                }`}
-                        >
-                            Azure Paradise
-                        </span>
-                    </Link>
-
-                    {/* Desktop Navigation */}
-                    <div className="hidden lg:flex items-center gap-8">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.path}
-                                to={link.path}
-                                className={`relative font-medium transition-colors duration-300 ${location.pathname === link.path
-                                    ? useDarkStyle
-                                        ? 'text-primary-500'
-                                        : 'text-white'
-                                    : useDarkStyle
-                                        ? 'text-neutral-600 hover:text-primary-500'
-                                        : 'text-white/80 hover:text-white'
+        <>
+            <nav
+                className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${useDarkStyle || isOpen
+                    ? 'bg-white/95 backdrop-blur-md shadow-lg py-3'
+                    : 'bg-transparent py-5'
+                    }`}
+            >
+                <div className="container-custom">
+                    <div className="flex items-center justify-between">
+                        {/* Logo */}
+                        <Link to="/" className="flex items-center gap-2 group">
+                            <Waves
+                                className={`w-8 h-8 transition-colors duration-300 ${useDarkStyle || isOpen ? 'text-primary-500' : 'text-white'
+                                    }`}
+                            />
+                            <span
+                                className={`font-heading text-xl md:text-2xl font-bold transition-colors duration-300 ${useDarkStyle || isOpen ? 'text-primary-600' : 'text-white'
                                     }`}
                             >
-                                {link.name}
-                                {location.pathname === link.path && (
-                                    <motion.div
-                                        layoutId="underline"
-                                        className={`absolute -bottom-1 left-0 right-0 h-0.5 ${useDarkStyle ? 'bg-primary-500' : 'bg-white'
-                                            }`}
-                                    />
-                                )}
-                            </Link>
-                        ))}
-                    </div>
-
-                    {/* Book Now Button - Desktop */}
-                    <div className="hidden lg:block">
-                        <Link
-                            to="/rooms"
-                            className="bg-gradient-to-r from-secondary-500 to-secondary-600 hover:from-secondary-600 hover:to-secondary-700 text-white font-semibold py-2.5 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
-                        >
-                            Book Now
+                                Azure Paradise
+                            </span>
                         </Link>
-                    </div>
 
-                    {/* Mobile Menu Button */}
-                    <button
-                        onClick={toggleMenu}
-                        className={`lg:hidden p-2 rounded-lg transition-colors ${useDarkStyle ? 'text-neutral-700' : 'text-white'
-                            }`}
-                        aria-label="Toggle menu"
-                    >
-                        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                    </button>
+                        {/* Desktop Navigation */}
+                        <div className="hidden lg:flex items-center gap-8">
+                            {navLinks.map((link) => (
+                                <Link
+                                    key={link.path}
+                                    to={link.path}
+                                    className={`relative font-medium transition-colors duration-300 ${location.pathname === link.path
+                                        ? useDarkStyle
+                                            ? 'text-primary-500'
+                                            : 'text-white'
+                                        : useDarkStyle
+                                            ? 'text-neutral-600 hover:text-primary-500'
+                                            : 'text-white/80 hover:text-white'
+                                        }`}
+                                >
+                                    {link.name}
+                                    {location.pathname === link.path && (
+                                        <motion.div
+                                            layoutId="underline"
+                                            className={`absolute -bottom-1 left-0 right-0 h-0.5 ${useDarkStyle ? 'bg-primary-500' : 'bg-white'
+                                                }`}
+                                        />
+                                    )}
+                                </Link>
+                            ))}
+                        </div>
+
+                        {/* Book Now Button - Desktop */}
+                        <div className="hidden lg:block">
+                            <Link
+                                to="/rooms"
+                                className="bg-gradient-to-r from-secondary-500 to-secondary-600 hover:from-secondary-600 hover:to-secondary-700 text-white font-semibold py-2.5 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+                            >
+                                Book Now
+                            </Link>
+                        </div>
+
+                        {/* Mobile Menu Button */}
+                        <button
+                            onClick={toggleMenu}
+                            className={`lg:hidden p-2 rounded-lg transition-colors ${useDarkStyle || isOpen ? 'text-neutral-700' : 'text-white'
+                                }`}
+                            aria-label="Toggle menu"
+                        >
+                            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </nav>
 
             {/* Mobile Menu */}
-            <AnimatePresence>
+            < AnimatePresence >
                 {isOpen && (
                     <>
                         {/* Overlay */}
@@ -124,7 +126,7 @@ const Navbar = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={toggleMenu}
-                            className="fixed inset-0 bg-black/50 lg:hidden"
+                            className="fixed inset-0 bg-black/50 lg:hidden z-[100]"
                         />
 
                         {/* Menu Panel */}
@@ -133,9 +135,10 @@ const Navbar = () => {
                             animate={{ x: 0 }}
                             exit={{ x: '100%' }}
                             transition={{ type: 'tween', duration: 0.3 }}
-                            className="fixed right-0 top-0 h-full w-80 bg-white shadow-2xl lg:hidden"
+                            className="fixed right-0 top-0 h-full w-3/4 max-w-sm z-[105] lg:hidden"
                         >
-                            <div className="p-6">
+                            <div className="absolute inset-0 bg-white" />
+                            <div className="relative z-10 p-6 h-full overflow-y-auto">
                                 {/* Close Button */}
                                 <div className="flex justify-end mb-8">
                                     <button
@@ -185,9 +188,10 @@ const Navbar = () => {
                             </div>
                         </motion.div>
                     </>
-                )}
-            </AnimatePresence>
-        </nav>
+                )
+                }
+            </AnimatePresence >
+        </>
     );
 };
 

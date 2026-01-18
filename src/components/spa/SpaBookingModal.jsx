@@ -251,9 +251,9 @@ const SpaBookingModal = ({ treatment, isOpen, onClose }) => {
                                             <button
                                                 type="submit"
                                                 disabled={submitStatus === 'loading' || submitStatus === 'success'}
-                                                className={`w-full py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all ${submitStatus === 'success'
-                                                        ? 'bg-green-500 text-white'
-                                                        : 'bg-primary-500 hover:bg-primary-600 text-white'
+                                                className={`w-full h-auto min-h-[3rem] py-3 rounded-lg font-semibold relative flex items-center justify-center gap-2 transition-all whitespace-normal text-center ${submitStatus === 'success'
+                                                    ? 'bg-green-500 text-white'
+                                                    : 'bg-primary-500 hover:bg-primary-600 text-white'
                                                     }`}
                                             >
                                                 {submitStatus === 'loading' ? (
@@ -269,8 +269,8 @@ const SpaBookingModal = ({ treatment, isOpen, onClose }) => {
                                                     </>
                                                 ) : (
                                                     <>
-                                                        <Sparkles className="w-5 h-5" />
-                                                        Book {treatment.name}
+                                                        <Sparkles className="w-5 h-5 absolute left-4" />
+                                                        <span>Book Treatment</span>
                                                     </>
                                                 )}
                                             </button>

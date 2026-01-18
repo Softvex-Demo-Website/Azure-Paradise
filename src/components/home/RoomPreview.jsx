@@ -66,8 +66,8 @@ const RoomPreview = () => {
                                             <Star
                                                 key={i}
                                                 className={`w-4 h-4 ${i < Math.floor(room.rating)
-                                                        ? 'text-accent-500 fill-current'
-                                                        : 'text-gray-300'
+                                                    ? 'text-accent-500 fill-current'
+                                                    : 'text-gray-300'
                                                     }`}
                                             />
                                         ))}
@@ -87,8 +87,8 @@ const RoomPreview = () => {
                                     </p>
 
                                     {/* Features */}
-                                    <div className="flex items-center gap-4 text-sm text-neutral-500 mb-4">
-                                        <span className="flex items-center gap-1">
+                                    <div className="flex flex-wrap items-center gap-4 text-sm text-neutral-500 mb-4">
+                                        <span className="flex items-center gap-1 whitespace-nowrap">
                                             <Users className="w-4 h-4" />
                                             {room.maxGuests} Guests
                                         </span>

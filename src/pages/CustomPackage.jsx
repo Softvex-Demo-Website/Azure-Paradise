@@ -203,15 +203,15 @@ const CustomPackage = () => {
                                             <button
                                                 type="submit"
                                                 disabled={submitStatus !== 'idle'}
-                                                className={`w-full py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all ${submitStatus === 'success' ? 'bg-green-500 text-white' : 'bg-secondary-500 hover:bg-secondary-600 text-white'
+                                                className={`w-full py-3 h-auto min-h-[3rem] rounded-lg font-semibold flex items-center justify-center gap-2 transition-all whitespace-normal text-center ${submitStatus === 'success' ? 'bg-green-500 text-white' : 'bg-secondary-500 hover:bg-secondary-600 text-white'
                                                     }`}
                                             >
                                                 {submitStatus === 'loading' ? (
                                                     <motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: 'linear' }} className="w-5 h-5 border-2 border-white border-t-transparent rounded-full" />
                                                 ) : submitStatus === 'success' ? (
-                                                    <><Check className="w-5 h-5" /> Booking Confirmed!</>
+                                                    <><Check className="w-5 h-5 flex-shrink-0" /> <span>Booking Confirmed!</span></>
                                                 ) : (
-                                                    <><Gift className="w-5 h-5" /> Book Custom Package - ${total}</>
+                                                    <><Gift className="w-5 h-5 flex-shrink-0" /> <span>Book Custom Package - ${total}</span></>
                                                 )}
                                             </button>
                                         </form>
@@ -469,10 +469,10 @@ const CustomPackage = () => {
                                         <button
                                             onClick={() => setBookingModalOpen(true)}
                                             disabled={totalSelections === 0}
-                                            className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all ${totalSelections === 0 ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-secondary-500 text-white hover:bg-secondary-600'
+                                            className={`flex items-center justify-center gap-2 px-6 py-3 h-auto min-h-[3rem] rounded-lg font-medium transition-all whitespace-normal text-center ${totalSelections === 0 ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-secondary-500 text-white hover:bg-secondary-600'
                                                 }`}
                                         >
-                                            <Gift className="w-4 h-4" /> Book Package - ${total}
+                                            <Gift className="w-4 h-4 flex-shrink-0" /> <span>Book Package - ${total}</span>
                                         </button>
                                     )}
                                 </div>

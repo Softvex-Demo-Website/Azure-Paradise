@@ -366,21 +366,21 @@ const Packages = () => {
                                             </div>
 
                                             {/* Price & Book Button */}
-                                            <div className="mt-auto pt-6 border-t border-gray-100 flex items-center justify-between">
-                                                <div>
-                                                    <div className="flex items-center gap-2">
+                                            <div className="mt-auto pt-6 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                                                <div className="w-full sm:w-auto text-center sm:text-left">
+                                                    <div className="flex items-center justify-center sm:justify-start gap-2">
                                                         <span className="text-3xl font-bold text-primary-600">${pkg.price}</span>
                                                         <span className="text-neutral-400 line-through">${pkg.originalPrice}</span>
                                                     </div>
                                                     <p className="text-xs text-neutral-500">{pkg.duration} • Per person</p>
                                                 </div>
-                                                <button
-                                                    onClick={() => handleBookPackage(pkg)}
-                                                    className="btn-primary flex items-center gap-2"
+                                                <Link
+                                                    to="/contact?subject=Package Booking"
+                                                    className="w-full sm:w-auto bg-primary-500 hover:bg-primary-600 text-white font-semibold py-2 px-6 rounded-lg flex items-center justify-center gap-2 transition-colors h-auto min-h-[3rem] whitespace-normal text-center"
                                                 >
-                                                    Book Package
-                                                    <ChevronRight className="w-4 h-4" />
-                                                </button>
+                                                    <span>Book Package</span>
+                                                    <ChevronRight className="w-4 h-4 flex-shrink-0" />
+                                                </Link>
                                             </div>
                                         </div>
                                     </motion.div>

@@ -152,7 +152,7 @@ const Contact = () => {
                                             </div>
                                             <div>
                                                 <h3 className="font-semibold text-neutral-800 mb-1">Email</h3>
-                                                <p className="text-neutral-600 text-sm">
+                                                <p className="text-neutral-600 text-sm break-all">
                                                     info@azureparadise.com<br />
                                                     reservations@azureparadise.com
                                                 </p>
